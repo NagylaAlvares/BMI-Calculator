@@ -6,6 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    header menu-->
+    <LinearLayout
+        android:id="@+id/vg_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:src="@drawable/bmi_weight"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="24dp"
+            app:tint="@color/white"/>
+
+<!--        title with description -->
+        <TextView
+            android:text="BMI Calculator"
+            android:layout_marginStart="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/white"
+            android:text="Fill out all the fields to calculate your BMI"/>
+
+
+    </LinearLayout>
+
+<!--    calculate button end position-->
     <Button
         android:id="@+id/btn_calculate"
         android:layout_width="match_parent"
@@ -24,15 +65,19 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/vg_header"
+        app:hintEnabled="false">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
             android:hint="Type your weight such as 72.10"
+            android:drawableEnd="@drawable/bmi_weight"
             android:inputType="numberDecimal"
-            android:id="@+id/edt_weight"/>
+            android:id="@+id/edt_weight"
+            android:maxLength="6"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 <!--    height bar   -->
@@ -42,15 +87,19 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:hintEnabled="false">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type your height such as 1.82"
+            android:drawableEnd="@drawable/bmi_height"
             android:inputType="numberDecimal"
-            android:id="@+id/edt_height"/>
+            android:background="@drawable/rounded_bg"
+            android:id="@+id/edt_height"
+            android:maxLength="4"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
